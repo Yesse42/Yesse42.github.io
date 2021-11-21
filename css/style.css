@@ -1,0 +1,54 @@
+html {
+    background: url(../images/sunset.jpeg) no-repeat center center fixed; 
+    background-size: cover;
+}
+
+body {
+    margin: 0 0 ;
+}
+
+#titlebox{
+    width: 100vw;
+    height: 70px;
+    padding: 10px;
+    background-color: rgb(88, 89, 150);
+    border-radius: 30px;
+    position: sticky;
+}
+
+.titlelink{
+    font-size: 20px;
+    font-style: normal;
+    text-decoration: none;
+    margin-right: 50px;
+    transition: 0.5s;
+}
+
+.titlelink:hover{
+    font-size: 30px;
+    color: rgb(143, 0, 131);
+}
+
+#title{
+    font-size: 30px;
+    color: rgb(199, 247, 199);
+    transition: 0.5s;
+}
+
+#title:hover{
+    font-size: 40px;
+    color: rgb(215, 206, 255);
+}
+
+a:link {
+    color: rgb(255, 148, 106);
+  }
+a:visited {
+    color: rgb(255, 250, 115);
+}
+a:hover {
+    color: rgb(204, 92, 148);
+}
+a:active {
+    color: rgb(255, 97, 221);
+}

@@ -1,12 +1,44 @@
 html {
-    background: url(../images/sunset.jpeg) no-repeat center center fixed; 
-    background-size: cover;
+    width: auto;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    background-color: rgb(110, 44, 44);
+    background-image: url("../images/sunset.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h1 {
+    color: rgb(29, 53, 160);
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: grey;
+    width: auto;  
+    border-radius: 10px;
+}
+
+.body{
+    background-color: rgb(172, 172, 172, 0.85);
+    border-radius: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 2%;
 }
 
 #titlebox{
-    width: 100vw;
-    padding: 10px;
-    background-color: rgb(88, 89, 150);
+    width: 94%;
+    padding: 2%;
+    margin: auto;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: rgb(88, 89, 150, 0.75);
     border-radius: 30px;
     position: sticky;
     text-align: left;
@@ -39,7 +71,7 @@ a:link {
     color: rgb(255, 148, 106);
   }
 a:visited {
-    color: rgb(255, 250, 115);
+    color: rgb(181, 255, 187);
 }
 a:hover {
     color: rgb(204, 92, 148);

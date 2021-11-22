@@ -3,17 +3,14 @@ html {
     background-size: cover;
 }
 
-body {
-    margin: 0 0 ;
-}
-
 #titlebox{
     width: 100vw;
-    height: 70px;
     padding: 10px;
     background-color: rgb(88, 89, 150);
     border-radius: 30px;
     position: sticky;
+    text-align: left;
+    line-height: 70px;
 }
 
 .titlelink{
@@ -25,8 +22,7 @@ body {
 }
 
 .titlelink:hover{
-    font-size: 30px;
-    color: rgb(143, 0, 131);
+    color: rgb(255, 124, 244);
 }
 
 #title{
@@ -36,8 +32,7 @@ body {
 }
 
 #title:hover{
-    font-size: 40px;
-    color: rgb(215, 206, 255);
+    color: rgb(122, 253, 129);
 }
 
 a:link {

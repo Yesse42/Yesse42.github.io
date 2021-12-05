@@ -1,48 +1,49 @@
 body {
-    font-family: 'Helvetica', 'Arial', sans-serif;
     font-size: 18px;
     background-attachment: fixed;
-    background-color: rgb(110, 44, 44);
+    background-color: rgb(150,29,19);
     background-image: url("../images/sunset.jpeg");
     background-repeat: no-repeat;
     background-size: 100%;
     padding: 0;
     margin: 0;
-    color: rgb(78, 78, 78);
-}
-
-h1 {
-    color: rgb(36, 64, 185);
-    font-size: 25px;
-}
-
-h2 {
-    color: rgb(36, 64, 185);
-    font-size: 20px;
 }
 
 img {
     display: block;
+    width: auto;
+    max-height: 50vh;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
-    background-color: rgb(203, 255, 229);
-    width: auto;
-    border-radius: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: lightblue;
 }
 
 .body {
-    background-color: rgba(217, 232, 236, 0.8);
-    border-radius: 20px;
+    border-radius: 5px;
     padding-left: 2%;
     padding-right: 2%;
     padding-top: 2px;
     padding-bottom: 2px;
-    margin: 40px;
+    margin: 20px;
     border-style: solid;
-    border-width: 5px;
-    border-color: rgb(203, 255, 252);
     transition: 0.5s;
+    background-color: rgba(36, 107, 184, 0.8);
+    color: rgb(207, 207, 207);
+    border-color: rgba(66, 66, 66, 0.7);
+}
+
+h1,h2{
+    color: rgb(207, 205, 45);
+}
+
+h1{
+    font-size: 28px;
+}
+
+h2{
+    font-size: 24px;
 }
 
 .headerfooter{
@@ -50,7 +51,6 @@ img {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0;
-    background-color: rgba(122, 123, 197, 0.8);
     text-align: left;
 }
 
@@ -58,7 +58,7 @@ img {
     position: sticky;
     min-height:100px;
     line-height: 100px;
-    transition: 0.5s;
+    background-color: rgb(51,81,182, 0.7);
 }
 
 #titlebox p {
@@ -66,37 +66,32 @@ img {
 }
 
 .titlelink{
-    font-size: 18px;
+    font-size: 22px;
     font-style: normal;
-    text-decoration: none;
     margin-right: 30px;
-}
-
-.titlelink:hover{
-    color: rgb(113, 228, 209);
+    color: rgb(240,145,53);
 }
 
 #title{
-    font-size: 30px;
-    color: rgb(68, 230, 203);
-}
-
-#title:hover{
-    color: rgb(233, 102, 102);
+    font-size: 40px;
+    margin-left: 20px;
+    color: rgb(240, 120, 39);
 }
 
 a:link {
-    color: rgb(95, 209, 50);
     transition: 0.5s;
     text-decoration: none;
 }
 
-a:visited {
-    color: rgb(255, 113, 113);
+.titlelink:hover {
+    color: rgb(241,213,72) !important;
 }
-a:hover {
-    color: rgb(204, 92, 148);
-}
-a:active {
-    color: rgb(255, 97, 221);
+
+#sidebox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: calc(100vh-50px);
+    background-color: rgb(51,81,182, 0.7);
 }

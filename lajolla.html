@@ -14,40 +14,167 @@
     <header class="headerfooter" id="titlebox">
         <p>
             <a id="title" class="titlelink" href="index.html">Jesse Robinett</a>
-            <a class="titlelink" href="links.html">Links</a>
             <a class="titlelink" href="lajolla.html">Climate of La Jolla</a>
             <a class="titlelink" href="lowclouds.html">California Low Clouds</a>
+            <a class="titlelink" href="seabreeze.html">Oceanic Influence</a>
             <a class="titlelink" href="response.html">The Follies of 90 Day Forecasting</a>
-            <a class="titlelink" href="lastpage.html">Basics of Storms</a>
+            <a class="titlelink" href="links.html">More Resources</a>
         </p>
     </header>
 
     <div class="body">
 
         <h1>
-            Why Bother?
+            La Jolla's Climate
         </h1>
 
         <p>
-            After attending UCSD for a few quarters, I began to wonder how 
+            After living on UCSD's campus for around 9 months, I began to develop an intuitive sense of what the
+            climate on campus was like: the same thing on repeat, forever and ever. That's a bit of an exaggeration,
+            but winter and summer both feel like mother nature decided to copy-paste the same 3 days for the whole
+            season with some minor tweaks here and there. It's always nice to have data to back up one's claims though,
+            so I went on a quest to find some for the La Jolla area.
         </p>
 
         <p>
-            Luckily, there is a weather station located on UCSD's campus at SIO's Southwest Fisheries building.
-            Although its period of record is a short 8 years, it can still grant some valuable insight into the climate on campus.
-            Let's take a look at some summary statistics I generated for it!
+            Luckily, there is a weather station on UCSD's Campus at SIO's Southwest Fisheries Building, and its data is freely accessible online
+            through <a href="https://download.synopticdata.com/#a/E3170">Synoptic Data</a>. The downside, however, is that the station's 
+            period of record began in late 2013, which means it only has about 8 years of data. That is not ideal for the construction
+            of an accurate climatology, for which a 30 year period of record is typically preferred. However, I can't seem to find any other
+            nearby station with a suitable period of record, and San Diego is riddled with microclimates so even just a few miles can lead to 
+            large changes in temperature; therefore, 8 years will have to do. We just have to keep in mind that this means the averages
+            may not be as accurate, and do some sanity checks with nearby stations to ensure nothing's gone horribly wrong.
+        </p>
+    </div>
+    <div class=body>
+        <h1>
+            The Analysis
+        </h1>
+        <p>
+            With the raw data retrieved from Synoptic, it's time to begin the number crunching. Synoptic does do some quality control,
+            so for the purposes of this recreational examination of the climate that should be sufficient. To do the actual number crunching,
+            I was originally going to use a Python script I had written many moons ago to analyze temperature data.
+            However, I could not use that monstrosity in good faith, as it was 600 lines of pure spaghetti; not a single function was defined in
+            the whole program, which is a disturbing red flag. To circumvent the issue I just rewrote the entire analysis script in Julia,
+            which as always took much longer than expected;
+            on the plus side, the script is now approximately one-third the length and much more maintainable, which gives me a measure of confidence that the numbers
+            I'm seeing are not the result of an error. To inspect the source code yourself, run it on different data, etc. look 
+            <a href=https://drive.google.com/drive/folders/1xfO4wRb-b6X_DVTw7w2Y7ddASgYgTnLj?usp=sharing>here</a>.
+            Here's the output of the program.
         </p>
     </div>
 
-    <img class=blogimg src="images/La Jolla Climate.png">
+    <figure class=figbox>
+        <p><img class=blogimg src="images/La Jolla Climate.png">
+        <figcaption>Summary Statistics for La Jolla's EW3170 Station</figcaption>
+        <ul style="font-size: 15px; text-align: left;">
+            <li>Daily High/Mean/Low: The highest/average/coldest temperature for a day</li>
+            <li>Record Warm Daily High: Warmest (daily high) temperature ever recorded in that month <br>(daily high is redundant here, as the maximum of daily maxima is the monthly maximum)</li>
+            <li>Mean Warmest Daily High: Average warmest temperature in that month.</li>
+            <li>Record Warm Mean Daily High: Warmest monthly average of the daily high temperatures</li>
+            <li>Mean Daily High: The average of all daily high temperatures for that month</li>
+            <li>And so on</li>
+        </ul>
+    </figure>
 
     <div class=body>
 
+        <h1>
+            Interpretation
+        </h1>
+        <h2>
+            Extreme Moderation
+        </h2>
         <p>
             As should be apparent, UCSD's climate takes moderation to the absolute extreme. 
             With the change in average high temperature between the coldest and warmest months standing at a mere 11ºF, 
-            and the difference in average low temperatures being 13ºF, the seasons here are pretty muted, to say the least
+            and the difference in average low temperatures being 13ºF, the seasons here are muted, although not quite as nonexistent
+            as I thought beforehand.
+            Also note the tiny differences between average high and low temperatures in all months of the years. In August
+            the difference between the average high and low temperature is ~6ºF! Even in wintertime the average temperature still only
+            swings about ~9ºF each day.
+        </p>
+        <p>
+            The lack of cold temperatures of any sort are also rather striking, with the chilliest temperature of the last 8 years
+            being a measly 39ºF. That's a far cry from <a href="https://www.sandiegouniontribune.com/news/150-years/sd-me-150-years-december-14-htmlstory.html">
+            when it snowed in La Jolla in 1967!</a> Sadly there has been no snow since, but I still cling to a dying hope that it will one day come again.
+            Although the nights may not be particularly cold, there have been some frigid (by San Diego standards) daytime highs where the temperature struggles to stagger 
+            beyond 50ºF. I also find it hilarious that in its 8 years of existence the station has not recorded a temperature below 60ºF in July or August.
+        </p>
+
+        <p>
+            The Pacific Ocean is the primary cause of this moderation. For more information see the <a href="seabreeze.html">oceanic influence</a> page.
+            Additionally, the station's position on a steep cliff overlooking the sea moderates its wintertime overnight temperatures.
+            This is because when the sky is clear, the air is dry, and the winds are calm (as it often is in winter), the primary cooling mechanism is the ground (not the air) radiating heat
+            to space. This creates a layer of cool air above the ground, which cools and thickens as the night progresses. However,
+            as cold air is denser than warm air, if your weather station is on a cliff all this cold air will simply slide downhill. 
+            This is why flat areas and especially the bottoms of canyons tend to be cool at night, as they can collect and hold that cold air.
+        </p>
+        
+        <h2>
+            Heatwaves!
+        </h2>
+        <p>
+            When the ocean does finally lose its stranglehold on La Jolla's climate, then things get spicy! 100ºF is unfathomably hot, especially given how mild La Jolla's 
+            climate normally is. Another interesting quirk of the climate is that it can be sweltering any month of the year.
+            Indeed, so far in 2021 the hottest temperature of the year
+            was 85ºF, recorded on Januray 15th. We've gotten close in some of the recent November heatwaves, but still can't beat the heart of winter,
+            which is quite humorous. The presence of such heatwaves in midwinter is often caused by the elimination of marine influence by seasonal Santa Ana winds.
         </p>
     </div>
+
+    <div class="body">
+        <h1>
+            Nearby Climates
+        </h1>
+        <p>
+            To get a sense of just how variable the weather is within the San Diego area, let's look at some of NOAA's 1991-2020 normals
+            for two nearby stations at Miramar and San Diego International airports
+        </p>
+    </div>
+
+    <figure class=figbox style="margin-bottom: 20px;">
+        <p><img class=blogimg src="images/lindbergh.png">
+        <figcaption>NOAA's 1991-2010 Normals at San Diego International</figcaption>
+        <a href="https://www.ncei.noaa.gov/access/us-climate-normals/#dataset=normals-monthly&timeframe=15&station=USW00023188" style="color: black">Source</a>
+    </figure>
+    <figure class=figbox>
+        <p><img class=blogimg src="images/miramar.png">
+        <figcaption>Normals at Miramar NAS</figcaption>
+    </figure>
+
+    <div class="body">
+        <p>
+            Interestingly, the daytime temperatures at San Diego International are quite a bit warmer than in La Jolla, with the averages differing by 3-5ºF.
+            It is also somewhat warmer at night. This is unsurpirising as San Diego airport is further from the open ocean.
+            Miramar, being around 5 miles inland from UCSD, is even warmer, because the oceanic influence there is weaker.
+            In light of these normals nothing seems terribly wrong with the statistics I have calculated, which is good.
+        </p>
+    </div>
+
+    <div class="body">
+        <h3>
+            What is UCSD's HDH doing?
+        </h3>
+        <p>
+            This is a bit of a digression, but HDH's average temperatures for UCSD (available on page 3 of this <a href="https://hdh.ucsd.edu/conferences/docs/FAQ.pdf">FAQ packet</a>)
+            are rather confusing to say the least. I can't actually find any station which matches the numbers they have for UCSD.
+            Where did they get them from? I have no idea, because there isn't a citation there either!!!!
+        </p>
+    </div>
+
+    <figure class=figbox>
+        <p><img class=blogimg src="images/hdh.png">
+        <figcaption>HDH's Stated Average Temperatures</figcaption>
+    </figure>
+
+    <div class="body">
+        <p>
+            These numbers do not match mine at all, being about 8-10ºF too warm in the day and 3-5ºF too cool at night.
+            So the question is where did they get them from? They don't look like NOAA's normals for Miramar or San
+            Diego International, so this mystery will for now have to remain unsolved.
+        </p>
+    </div>
+    
 </body>
 </html>

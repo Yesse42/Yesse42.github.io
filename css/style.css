@@ -9,12 +9,23 @@ body {
     margin: 0;
 }
 
-img {
+.blogimg {
     display: block;
     width: auto;
     max-height: 50vh;
     margin-left: auto;
     margin-right: auto;
+    border-width: 10px;
+    border-style: solid;
+    border-color: lightblue;
+}
+
+.embedimg{
+    max-height: 200px; 
+    max-width: 100%;
+    float: left;
+    margin: 15px;
+    margin-left: 0px;
     border-width: 10px;
     border-style: solid;
     border-color: lightblue;
@@ -30,20 +41,22 @@ img {
     border-style: solid;
     transition: 0.5s;
     background-color: rgba(36, 107, 184, 0.8);
-    color: rgb(207, 207, 207);
+    color: rgb(235, 227, 227);
     border-color: rgba(66, 66, 66, 0.7);
-}
-
-h1,h2{
-    color: rgb(207, 205, 45);
 }
 
 h1{
     font-size: 28px;
+    color: rgb(230, 216, 33);
 }
 
-h2{
+h2, h3{
     font-size: 24px;
+    color: navajowhite;
+}
+
+h3{
+    font-size: 21px;
 }
 
 .headerfooter{
@@ -52,13 +65,13 @@ h2{
     padding-right: 10px;
     margin-bottom: 0;
     text-align: left;
+    background-color: rgb(51,81,182, 0.7);
 }
 
 #titlebox{
     position: sticky;
     min-height:100px;
     line-height: 100px;
-    background-color: rgb(51,81,182, 0.7);
 }
 
 #titlebox p {
@@ -69,7 +82,7 @@ h2{
     font-size: 22px;
     font-style: normal;
     margin-right: 30px;
-    color: rgb(240,145,53);
+    color: rgb(240,145,53) !important;
 }
 
 #title{
@@ -81,17 +94,23 @@ h2{
 a:link {
     transition: 0.5s;
     text-decoration: none;
+    color: yellowgreen;
+}
+
+a:visited {
+    color: rgb(253, 206, 136);
 }
 
 .titlelink:hover {
     color: rgb(241,213,72) !important;
 }
 
-#sidebox {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: calc(100vh-50px);
-    background-color: rgb(51,81,182, 0.7);
+#footer {
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.footerlink{
+    color: rgb(198, 201, 174) !important;
 }

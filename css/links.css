@@ -2,7 +2,11 @@ body{
     background-image: url(../images/links.jpeg);
 }
 
-a{
+a {
+    color: inherit;
+}
+
+a:visited {
     color: inherit;
 }
 

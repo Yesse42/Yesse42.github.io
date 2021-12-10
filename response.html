@@ -23,13 +23,125 @@
     </header>
 
     <div class=body>
+        <p>
+            This article is entirely my opinion; please do not sue me if you are in a litigous mood. This is just an assignment.
+        </p>
+        <p>
+            Before examining AccuWeather's claims about their forecasts, some preliminary knowledge on weather forecasting is in order.
+        </p>
         <h1>
-            Why Case Studies
+            Deterministic Chaos
         </h1>
         <p>
-            I think case studies are a great way to look at some wild weather events
+            The primary equations governing atmospheric motion are the infamous Navier-Stokes equations, which 
+            describe the evolution of velocity with time in a fluid, the continuity equation, which ensures that fluid
+            motions preserve mass, and the ideal gas law, which relates pressure, temperature, and density. 
+            Importantly, it appears that solutions to the Navier-Stokes equations <a href="https://aip.scitation.org/doi/10.1063/1.865663">are chaotic</a>
+        </p>
+        <p>
+            But, you may ask, what does it mean to say something is chaotic. I will here defer to Edward Lorenz, who describes it as such:
+            <blockquote>"Chaos: When the present determines the future, but the approximate present does not approximately determine the future."</blockquote>
+            
+            Indeed, Lorenz himself discovered one of the most frequently cited examples of chaos, the Lorenz Attractor.
+            Two arbitrarily close starting points will eventually end up on completely different lobes of the attractor, and 
+            so it is chaotic.
         </p>
     </div>
+
+    <figure class=figbox>
+        <p><img class=blogimg src="images/lorenz.png">
+        <figcaption>The path of a particle through the Lorenz Attractor</figcaption>
+        <a href="https://en.wikipedia.org/wiki/Lorenz_system#/media/File:A_Trajectory_Through_Phase_Space_in_a_Lorenz_Attractor.gif" style="color: black">Source</a>
+    </figure>
+    
+    <div class=body>
+        <h1>
+            So Why Do We Care About Chaos?
+        </h1>
+        <p>
+            That's because the atmosphere is a chaotic system, and so even miniscule errors in the initial conditions
+            lead predicted conditions to wildly diverge from what will actually occur after some period of time. In general that period of time
+            is no less than a few weeks in the best of circumstances. Although forecast accuracy is a surprisingly tricky thing
+            to assess, the general consensus seems to be that deterministic forecasts beyond 10 days at most are inaccurate. In fact, the 
+            National Weather Service only forecasts 7 days ahead. <a href="https://scijinks.gov/forecast-reliability/">This NOAA article</a>
+            says that 10-day forecasts are only right about 50% of the time, but the statement is woefully imprecise, so take it with a grain of salt.
+        </p>
+        <p>
+            However, I may have found the source for their claim at the European Center For Medium Range Weather Forecasting.
+        </p>
+    </div>
+
+    <figure class=figbox>
+        <p><img class=blogimg src="images/ecmwfskill.png">
+        <figcaption>Skill of the ECMWF model at predicting the height above sea level where the pressure will be 500hPa</figcaption>
+        <a href="https://www.ecmwf.int/en/forecasts/charts/catalogue/plwww_m_hr_ccaf_adrian_ts?facets=undefined&time=2021111100" style="color: black">Source</a>
+    </figure>
+    
+    <div class=body>
+        <p>
+            As is apparent from the image, the skill at about 10 days for 500hPa height is about 50%. It should be noted that 
+            this result should not be generalized to other important parts of the weather such as precipitation; a separate evaluation of skill
+            would be necessary for that. Regardless, it still illustrates the difficulties of long range forecasting.
+        </p>
+        <p>
+            Weather forecasting agencies such as NOAA do offer longer range forecasts such as those from the 
+            <a href="https://www.cpc.ncep.noaa.gov">Climate Prediction Center</a>. Their recent forecast is shown below
+        </p>
+    </div>
+
+    <figure class=figbox>
+        <p><img class=blogimg src="images/cpc.png">
+        <figcaption>Most Recent CPC forecast</figcaption>
+        <a href="https://www.cpc.ncep.noaa.gov" style="color: black">Source</a>
+    </figure>
+
+    <div class=body>
+        <p>
+            In the CPC forecast, notice that they are not predicting actual high and low temperatures, but instead probabilities of above and below average temperatures.
+            This reflects the greatly increased uncertainty in forecasts for the far future.
+        </p>
+        <p>
+            With most of the heavy lifting done, we are now prepared to respond appropriately to AccuWeather's uber long-range forecasts.
+        </p>
+    </div>
+
+    <div class=body>
+        <h1>
+            Why AccuWeather's 90 Day Forecasts are not useful
+        </h1>
+        <p>
+            AccuWeather claims 
+            <blockquote>
+                AccuWeather’s new industry-leading forecast provides 90 days of daily forecasts, a valuable tool for planning the best time of the season for road trips, vacations and outdoor activities, letting users follow the forecast and make more detailed plans as the date approaches.
+            </blockquote>
+        </p>
+        <p>
+            As we have already discussed, weather model skill deteriorates swiftly at longer lead times,
+            to the point where individual models become useless and one must speak in probabilities. However,
+            not only is 90 days is significantly longer than even the CPC's probabilistic forecasts, but 
+            AccuWeather claims to predict the daily weather, while the CPC is predicting for entire weeks/months at a time.
+            That temporal resolution is simply not at all feasible, and to say that it is is deceptive to say the least. It would be more helpful
+            if after a certain lead time they switched away from daily forecasts to probabilistic ones, and then when those lose skill
+            simply give the location's climatology.
+        </p>
+        <p>
+            Another, more fun argument against AccuWeather's claims is to look
+            at actual model output at extremely long lead times from state of the art weather models like the GFS and ECMWF and see the absolutely
+            ridiculous run-to-run flip flops and disagreement between the two models. I've put two recent hour 384 (16 day) GFS forecasts
+            for total accumulated precipitation over the entire model run. The level of agreement is not particularly encouraging; for examples
+            Baja went from quite wet to almost completely dry. Check out Tropical Tidbits
+            in the extra resources if you want to see more weather model runs for yourself.
+        </p>
+    </div>
+
+    <figure class=figbox style="margin-bottom: 20px;">
+        <p><img class=blogimg src="images/gfs1.png">
+        <figcaption>One model run</figcaption>
+    </figure>
+    <figure class=figbox style="margin-bottom: 20px;">
+        <p><img class=blogimg src="images/gfs2.png">
+        <figcaption>Another Model Run</figcaption>
+    </figure>
     
 </body>
 </html>
